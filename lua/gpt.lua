@@ -3,7 +3,7 @@ local M = {}
 -- Setup API key
 M.setup = function(opts)
 	local api_key = opts.api_key
-	local api_key = opts.model
+	local model = opts.model
 	if api_key == nil then
 		print("Please provide an OpenAI API key")
 		return
