@@ -3,6 +3,7 @@ local M = {}
 -- Setup API key
 M.setup = function(opts)
 	local api_key = opts.api_key
+	local api_key = opts.model
 	if api_key == nil then
 		print("Please provide an OpenAI API key")
 		return
@@ -16,6 +17,7 @@ M.setup = function(opts)
 
 	-- Setup API key
 	vim.g.gpt_api_key = api_key
+	vim.g.model = model
 end
 
 --[[
@@ -40,7 +42,7 @@ M.stream = function(prompt, opts)
 
 	local payload = {
 		stream = true,
-		model = "gpt-3.5-turbo",
+		model = vim.g.model or "gpt-3.5-turbo",
 		messages = { { role = "user", content = prompt } },
 	}
 
