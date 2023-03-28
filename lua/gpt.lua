@@ -42,7 +42,7 @@ M.stream = function(prompt, opts)
 
 	local payload = {
 		stream = true,
-		model = vim.g.model or "gpt-3.5-turbo",
+		model = "gpt-4-32k",
 		messages = { { role = "user", content = prompt } },
 	}
 
